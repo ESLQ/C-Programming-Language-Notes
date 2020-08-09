@@ -1,0 +1,18 @@
+datatype nameOfVariable = information;
+printf("Type stuff here");
+%s - indicate string variable
+char nameOfVariable[] = "String";
+char nameOfVariable = "E";
+%d - indicate integer variable
+int nameOfVariable = 7;
+print(%d, 100);
+/* comments here */
+%f - indicate float variable 
+pow(base, exponent); pow(2, 4) = 16;
+sqrt(36) = 6
+ceil(31.2) = 32
+floor(31.9) = 31
+const datatype nameOfVariable = information;
+scanf("%d", &age) int age; 
+%lf - double 
+fgets(name, 20, stdin);
