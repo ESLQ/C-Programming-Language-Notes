@@ -1,1 +1,48 @@
+Default HTML
+<!DOCTYPE html>
+<html> (highest level tag) </html> (closing tag)
+tags inside other tags are indexted
+<body> content goes here </body>
+<title> Title of your Webpage </title>
+<meta> tag used to define information about the file
+<meta charset = "UTF-8"> // UTF-8 basically includes most of the symbols used in the world, charset is an attribute
+<h (1-6)> heading text size, 1- largest text -> 6 - smallest text
+<p> paragraph tag, can type stuff in between the opening and closing tags </p>
+<b> bold tag
+<i> italicize tag
+<br> "break" adds white space
+<hr/> horizontal line
+<big> indicate size
+<small> indicate size
+<p style = "color:blue; background - color = red;"  // color and background are parameters
+<header> header tag
+<nav> navigation tags (links/URL)
+<main> main tag
+<article> article tag
+<scetion> section tag
+<aside> side tags, usually used for advertisements
+<footer> footer tag
+<a href = "Enter URL here" target = "_blank" > Add title/caption to the URL here </a> // _blank opens a new tab
+<img width = "100" src = "URL link alt = "What is displayed if image doesn't load"> </img> // sizes are in pixels
+<video src = "URL link" loop controls width = "200" height = "200"> </video>
+<ul> unordered lists // bullet points
+<ol> ordered lists // numbered, can add attributes, type = "A" - alphabetical, "I" = Roman numeral
+<li> text list
+<dl> descriptioin list
+<dt> items
+<dd> description of the item
+<table> table tag
+<tr> table row
+<td> table data, colspan = "3"
+<caption> caption tag
+<thead> table head
+<tbody> table body
 
+Containers
+inline element <span>
+block element <p> <div>
+<input type = "text"/>
+<text area rows = "10" cols = "30">
+<iframe src = "link"> (add text here if the iframe link doesn't work) </iframe>
+frameborder = "0"
+<meta name = "description" content = "text"> // viewport = "width = device - width, initial - scale = 1.0"
