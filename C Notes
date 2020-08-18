@@ -16,3 +16,74 @@ const datatype nameOfVariable = information;
 scanf("%d", &age) int age; 
 %lf - double 
 fgets(name, 20, stdin);
+int numbers[] = {1, 2, 3}; // instantiating an array, same as java
+main method usually the last method unless method prototypes are declared before main method, function order matters
+double cube(double num); // Prototype for a function defined later on, indicate return type, name of function/method, indicate parameter type and name of parameter
+if else statements similar to java
+scanf(" %c", &variableName); // must have a space after the quotation marks for chars
+switch statements similar to java
+
+Ex.
+char grade;
+switch(grade) {
+  case 'A':
+    printf("Grade is A")l
+    break;
+  case 'B':
+    printf("Grade is B")l
+    break;
+  case 'C':
+    printf("Grade is C")l
+    break;
+  default:
+    printf("No Grade");
+  }
+
+structs keyword similar to objects in Java
+struct Student {
+  char name[20];
+  double gpa;
+  }; // template for objects, 
+ 
+ struct Student student1;
+ student1.age = 19;
+ strcpy(student1.name, "Bob"); // name is a String type, use strcpy function to assign a string
+ 
+ while loops similar to Java
+ 
+ do while
+ Ex.
+ 
+ do {
+  printf("Print this first");
+  index++;
+  } while (index < 10);
+  
+  main method
+  int main() {
+    return 0;
+    }
+  
+  2D Array similar to Java
+  int nums[3][4] = {
+    {1,2,3,4},
+    {5,6,7,8},
+    {9,10,11,12}
+    }
+  printf(%d", nums[2][2]); // finding an element is the same as it is in Java, prints 11 because index starts at 0
+  
+  & - ampersand points to memory, get memory address
+  Pointer variable 
+  Ex.
+  
+  int * pNameOfMemoryAddressOfVairable = &variableName;
+  printf("%d", *pvariableName) // dereferencing = * getting value/data
+  
+  FILE * fpointer = fopen("file.txt", "w")
+  fclose(parameter = memory address of file); // always close the file after it is opened
+ "w" = write
+ "a" = append // add stuff to the end of a file
+ "r" = read
+ 
+ 
+ 
