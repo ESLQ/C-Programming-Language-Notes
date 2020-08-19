@@ -1,1 +1,130 @@
-
+style = "color : red"
+<style>
+  p{color : red} // styles all paragraph tags to the parameter
+ </style>
+.blue-text; // . = class
+define class (reuse styles)
+font-size : 30px;
+font-family : (name of font you want);
+Displayability - Style (most specific), id, class, header (least specific)
+Selectors - grabbing and manipulating HTML
+<h1> Heading text
+<p> paragraph
+Syntax 
+p { // tag name
+  color : red;
+  }
+.aclass { // <h2 class = "aclass"> name of class defined in HTML and can be manipulated using CSS
+  color : blue;
+  }
+<p id = "sometext"
+  #sometext {
+    color : orange;
+    }
+class = "variable_name"
+.variable_name {
+  color : red;
+  }
+id = "contact-us"
+#contact-us {
+  color : green;
+  }
+style = " color : steelblue";
+classes - used for multiple items
+id - generally used for 1 item
+li : first-child { // indicate which child you want to edit (last-child) (nth-child(n)) specific item to edit
+  color : blue; (only-child)
+  }
+<a> anchor tag for links
+psuedoselectors:
+  #google-link : link { // unvisited link
+  #google-link : visited { // after link is visited
+h2 + a { // make changes to every anchor tag that follows an h2 after
+  color : red
+  }
+textarea - button { // every button after textarea in the same parent
+ul - top parent descendant selector // goes from bottom to top
+li - bottom (child)
+h2[attr = subtitle]
+img[src^ = ".../img/"] // ^ - indicates begins with, * - indicates as long as it contains, $ - indicates ends with
+Properties : value;
+CSS general rule
+selector { // block
+  properties : value; // properties is a place holder for the name of the style you want
+  }
+body {
+  background : red;
+  }
+background-repeat: no-repeat; (repeat is default)
+background-size : cover:
+rgba(red, green, blue, opacity(0-1)) // (0-1) is an alpha value, 0 = transparent 1 = opaque
+background : linear-gradient(to right, red, green, blue) // indicate directions and what colors you want
+background: radial-gradient(red,blue) /circular gradient
+font-size : 2cm;
+px, pt, pc // pixels, points, picas, 1px = 1/96 inches, 1pt = 1/72 inches, 1pc = 12pt = 1/6 inches
+vw - view width
+.link {
+  text-decoration : name, linethrough, overline
+  }
+text-transform: captialize, uppercase, lowercase; // capitalize = capitalize the first letter of each word
+text-align: center, justify // end text at end of line - justify
+font-weight: 100; // bolding text
+font-style: italic, oblique
+font-family : sans-serif;
+Padding - space between the content and the border
+Border- divider between padding and margin
+Margin - Space between border and all other content
+border: size style color
+         2px solid  rgb(255, 255, 255)
+             double
+             dashed
+padding-(top, right, bottom, left): 20px
+margin: 40px
+float: right; // places an element on the left or right side of its container, allowing text and inline elements to wrap around it
+display: none; // completely hide/removes something
+display: inline, inline-block;
+Flexbox - flexible box that splits into two main parts, the container, and the items
+Containter - parent element, usually a div, display type is active
+Flex items - child elements of container, make up contents of the box
+display: flex;
+flex-direction: column-(reverse) // default is row
+flex-wrap: wrap; // default is no wrap
+justify-content: space-between(around margins)
+align-items: center;
+style= "order: 1;"
+flex-grow: 1; // expand items relative to device and other items
+flex-shrink: 1; // shrink items relative to device and other items
+flex-basis: 100px; // initial main size of flex item
+flex: 5 1 100px; // 3 parameters - (grow, shrink, basis) in that order
+align-self: flext-(start, end, center(noflex)); (at beginning, top)
+Grid - display type that can be used to activate certain layout features on a container element (width & height)
+display: grid;
+grid-template-columns: 10px 50px 10px; // 3 columns
+grid-template-rows: 50px 250px; // 2 rows, can replace sizes with "auto" which divides space evenly
+justify-content: (start, center, end) position items horizontally (space-evenly) (space-around)
+align-content: (start, center end) // vertical positioning
+grid-(column,row)-gap: 150px;
+grid-gap: (rowsize, colsize;)
+grid-area:
+  .submit-button: hover {
+  background: rgb
+transition: background  2s (seconds) ease // use "all" for transitioning everything
+padding: 20px 40px; // make button bigger
+-webkit-, -moz-, -o- // browser support
+transform: translate(50px, 30px) // (x-axis, y-axis)
+transform: scale(2.5); // increase or decrease size
+transform: rotate(-90deg)
+transform: (skewX, skewY)(45deg) // rotate on imaginary x or y axis
+transform: matrix(1, .45, .45, 1, 100, 50) // parameters - (a, b, c, d, tx, ty)
+animations syntax
+@keyframes translate-element{
+0% example {background}
+50% {transform: translate(10px, 10px);}
+animation-name: (insert name of your animation)
+animation-duration: 4s;
+animation-timing-function: (ease, linear, ease-in-out);
+animation-delay: -2s; //starts the animation at 2s
+animation-iteration-count: 2; // infinite keyword
+animation-direction: (normal, reverse, alternate-reverse); // normal - start to finish, alternate - 0 to 100 to 0, alternate-reverse - 100 to 0 to 100
+shorthand for animations
+  animation: (name, duration, timing(speed), delay, iteration count, direction);
