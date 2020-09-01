@@ -1,1 +1,74 @@
+print(" ")
+No semi-colons at the end
+Identation is very important
+Case sensitive
+a = "Does not require data type when instantiating variables" (what is assigned to the variable will determine the type)
+# this is how you start writing a comment
+\ - used for line continuation
+vowels = ['a', 'e', 'i', 'o', 'u'] (array of chars)
 
+if statements
+if True: (Use colon to indicate end of the condition you are checking)
+  print("Name");
+else:
+  print("Pineapple")
+elif (else if abbreviated)
+if x > 5 and y < 6: (&& || are typed out in python as and or)
+  print("1")
+elif x = 6:
+  print("2")
+else:
+  print("3")
+
+Indexing starts at 0
+Can use negative indexing
+print(vowels[-1]) -> u (negative indexing will start from the end)
+print(vowels[1:]) -> e i o u (notation inside the square brackets means to start at index 1 and go to the end of the list)
+vowels.append('y') (append function adds to the end of the list)
+Frequently used functions - copy, insert, remove, append, clear, pop, index, count, sort
+Tuples - immutable list
+
+defining a function
+def myFunction(put parameters here):
+return (breakout of the code)
+dictionary - map
+variableName = {"Jan" : "January", "Feb" : "February", "Mar" : "March", "Apr" : "April"}
+refer by key (left side of colon is the key and it must be unique, right side is the value)
+
+loops
+while i <= 10:
+  print("continue")
+  i += 1
+  
+for (name of iterator) in "String": (this will automatically increment by 1)
+
+for letter in range(len(vowels)):
+  print(vowels[letter])
+  
+try:
+  # code you want to test
+except: (using except without specifying the error that could occur would catch every error in the code)
+  # code for what happens when there is an error
+Common errors - ZeroDivisionError, ValueError
+
+Reading files
+open(type the name of the file you want to open)
+r = read file
+w = writing/change file
+a = add new information, can't change existing info
+r+ = read and write
+open("myFile.txt, "r")
+.close() (close the file after it is opened)
+readable - boolean
+import - the same as extending a class or modules
+Syntax
+from (class name) import (the same class name)
+
+creating objects
+class (name of class you want):
+  def __init__(self, name, lastName, age)
+    self.name = name (similar to using this.name = name for constructors in Java)
+    self.lastName = lastName
+    self.age = age
+
+raise - exceptions
