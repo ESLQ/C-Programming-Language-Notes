@@ -1,1 +1,90 @@
+Commands
+pwd - print working directory and directory location
+cd- change directory, takes in one argument directory
+type + (command name) - Determine the type of a command to see whether it is builtin or not
+--help - see a list of option for that command
+cd~;pwd - return to home directory
+cd..;pwd - switch to parent directory
+-a - see all directory contents including hidden files and sub-directories
+-l - see long format listing for each item, user and group ownership names
+-t - sort contents by the time they were created or last modified
+-o - suppress group ownership details
+-g - suppress user ownership details
+ls - list all the contents
+ls -altog - combination of altog commands
+Absolute directory address begin with "/", root location
+basename - Extract name of something at the end of a path address
+dirname - Extract name of parent directory
+mkdir - Make a new directory, takes in one argument, the directory name you want
+bash - default shell
+echo $SHELL - discover the location of the bash program
+rmdir - remove directories in the shell, argument - directory name
+-ri - recursive interactive, requesting permission before deleting a directory
+xed- launch text editor
+rm -ri + (directory name) - interactive removal, can remove directory if last thing
+rm -r + (directory name) - instantly deletes directory along with its contents
+mv - move and rename files, two arguments - name of file and destination. Also current name and new name of file
+cp - copy file to new location, can copy more than one file and state destination as the final argument
+* - means all, wildcard, used as an argument
+ln - create hard and soft links, hard-pointing to the system address of a file, soft - storing the path to a file, file name as argument
+-s - to create a softlink(symbolic) link, default is hard link
+readlink - discover the target to which a symbolic link is pointing to
+rm Directory/myFile.txt - removes myFile.txt from the directory name I indicate
+ln, ln -s - create hard and soft links
+read softlink - see the target to which the softlink points to
+stat + (file name) - lists every attribute of the file, argument - file name
+du -b + (file name) - discover size of the file in byte units
+wc - discover the file's line count, word count, and byte count
+file + (file name) - discover the type of a file
+touch - change last accessed and last modified timestamp
+touch -d + (date) + (file name) - update timestamp of a file, also can add hour : min
+comm + (file name) + (file name) - compares two files, reports nothing if identical, otherwise reports 3 columns. Col 1 - found in first, not second, Col 2 - found in second, not in first, Col 3 - lines found in both files
+cmp - compare two files, report nothing if identical, reports location of first difference
+comm compares line by line, diff - compares text files and directories to reveal unique items
+Checksum numbers - found on internet download pages so that the user can ensure that a downloaded file is intact, typically made using the md5 algorithm
+md5sum - produces a 32-byte checksum for the file specified as its argument, should match that stated by the originator, if the file is intat
+cksum - generates a Cycli Redundancy Check value and includes the file's byte size
+find (directory name) -type f -name (file name) - locate a file on your system. -type f - is searching for a file. -name - search by name
+find ~ -type f -name myFile.txt - search home directory(~) may include error messages
+find ~ -type f -name myFile.txt 2>/dev/null - to remove error messages
+\ - escape character to the next line
+find -L - seek the location of a file, and location of any softlinks to that file
+type d - directories
+find /usr -maxdepth 1 - type d- direct descendant directories
+cat + (file name) - to view a file, can concatenate files
+cat myFile.txt | less - pipe operator "|" less mode, display text one at a time for large files starting from the beginning ends with ":" prompt, enter less mode commands, Q - to quit
+head - preview the first 10 lines of the text
+tail - preview the final 10 lines of the text
+nl - add line numbers, -v - specify integer at which to start numbering
+nl -v 0 -bt myFle.txt | head -bt - number non-empty lines
+vi - opens Vim text editor
+Interst Key - Input text, Esc to exit insert mode, switches to command mode
+":" - begin vi command, w- write, q- quite
+field- (a column of text) -f3- column 3, -f l, 3 - indicates column 1 and 3 -f 2-4 - indicates 2 through 4
+paste - display the file contents horizontally, side by side, accepts multiple file arguments
+cut - specify which field to display, -f1,2,3,4,5...
+tr + (word/character) + "(word/character)" - changes first argument to second argument
+";" - separate multiple commands into one line
+cat myFile.txt; cat myFile2.txt | tr "a-z" + "A-Z" - transform text to uppercase
+sort - used at the end of a pipeline, display line of text alphabetically
+tee - used after a pipeline, save a file as the name specified by the argument, file created in current directory, useful for saving before changing
+grep - display all lines from a text file that contain a specified string or pattern, the string you are looking for in the first argument, name of file is the second argument
+uniq - used after pipeline, remove duplicated lines, can also sort
+look -d - output all lines of text from a file starting with the indicated string, -d - seeks only alphanumeric characters
+aspell -c - spell checker, -c - iteractively check for erros and possible suggestions, I - ignore a word, R - type your own replacements, X - exit, indicate text file argument
+sudo - allow commands to be executed as the super user/admin
+sudo su - enter password as regular user to assume superuser status
+APT - Advanced packaging tool - command-line tool that automates the process of retrieving, configuring, and installing software packages
+All commands must be run as a superuser
+man apt-get - to see all possible options/commands
+apt-get upgrade - upgrade to latest version
+apt-get update - update repository packages
+apt-get --purge remove package-(package name) - complete removal of the package and its configurations. Without --purge, retains configuration
+gzip - compress files into a single archive
+gunzip - extract from the original file
+df - disk free
+unmount - unmount the file system on the USB flash drive
+sudo fsck - check the USB file system for errors
+useradd (user name) - create a new user with the specified name
+
 
