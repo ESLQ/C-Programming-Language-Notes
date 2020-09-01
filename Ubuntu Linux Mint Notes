@@ -86,5 +86,67 @@ df - disk free
 unmount - unmount the file system on the USB flash drive
 sudo fsck - check the USB file system for errors
 useradd (user name) - create a new user with the specified name
+usermod - modify specified user
+userdel - delete specified user
+chfn - change full name
+chsh - change shell
+groups - discover which groups they belong to, specify username as argument
+groupadd - specific name of a new group
+groupmod -n - change name of an existing group
+groupdel -n - delete specified group
+chmod - change permissions at shell prompt, Read(r) = 4, Write(w) = 2, Execute(x) = 1, 7 = full permissions
+chgrp - change group of a file by stating group name, then file name
+chown - specify username and file name to change user ownership
+chmod 644 (filename) - gives everyone read access
+PID - Process Identity number, processes and services that are running
+ps -e - see a list of current processes
+ps -u - processes of a particular user, username argument
+man ftp - file transfer program
+kill + PID number - terminate program process
+IP address - internet protocol, used to directly communicate to computer host + URL - discover IP address for that URL
+ping -c - send a certain number of packets as argument and IP address argument to see if it is reachable
+ifconfig - discover IP address of your own computer, interface configuration
+lpr + (file name) - establish a print job
+lpq - see print queue
+lprm + (Job number) - to remove Job number queue
+expr - perform math calculations, can do boolean
+expr length, substr, index, argument "String"
+if [ `expr 8 % 2 ` = 0]; then echo Even; 
+else echoOdd; fi
+` (expression) ` - perform before the test expression, fi - marks end of statement
+Shell scripts - saved for execution, plain text files that begin their first line with #!/bin/bash specifying the location of the bash program and typically given a .sh file extension
+$RANDOM - shell variable that generates an integer from - to 32767 each time it is called
+date t%s - current time and date
+let + (variable name) - instantiate a bariable
+echo " (String) " - write text
+let NUM=5 (no space before and after the "=")
+read + (variable name) - allow input from user
 
+while [$GUESS -ne $NUM] (ne - not equal)
+do
+  if [$GUESS -gt $NUM] (gt - greater than)
+    then echo "Lower"
+    else echo "Higher"
+  fi
+  read GUESS
+done
+
+./scriptname.sh - execute script
+declare -i number1, -i is an integer
+$number1 - $ - pre-existing variable
+echo - prints text
+exit 0 - exit programm success
+chmod + x - make file executable
+man wget - get info about a command (--help works too)
+chmod + x theloop.sh
+./theloop.sh - run the file
+touch file1 file 2 - create files
+nano - text editor (nano + myfile.sh)
+close iif statements with "fi"
+case $(variable name) in
+x | y ) (do something)
+;;
+* ) echo "String" (catches everything else)
+;;
+esac to close (case spelled backwards)
 
