@@ -1,4 +1,5 @@
-Commands
+***** Commands *****
+
 pwd - print working directory and directory location
 cd- change directory, takes in one argument directory
 type + (command name) - Determine the type of a command to see whether it is builtin or not
@@ -122,6 +123,8 @@ echo " (String) " - write text
 let NUM=5 (no space before and after the "=")
 read + (variable name) - allow input from user
 
+***** Loops *****
+
 while [$GUESS -ne $NUM] (ne - not equal)
 do
   if [$GUESS -gt $NUM] (gt - greater than)
@@ -130,6 +133,8 @@ do
   fi
   read GUESS
 done
+
+***** Execution *****
 
 ./scriptname.sh - execute script
 declare -i number1, -i is an integer
