@@ -1,3 +1,5 @@
+***** Modifiers *****
+
 style = "color : red"
 <style>
   p{color : red} // styles all paragraph tags to the parameter
@@ -10,7 +12,9 @@ Displayability - Style (most specific), id, class, header (least specific)
 Selectors - grabbing and manipulating HTML
 <h1> Heading text
 <p> paragraph
-Syntax 
+
+***** Syntax ***** 
+
 p { // tag name
   color : red;
   }
@@ -30,6 +34,9 @@ id = "contact-us"
   color : green;
   }
 style = " color : steelblue";
+
+***** Classes and ID *****
+
 classes - used for multiple items
 id - generally used for 1 item
 li : first-child { // indicate which child you want to edit (last-child) (nth-child(n)) specific item to edit
@@ -48,10 +55,15 @@ li - bottom (child)
 h2[attr = subtitle]
 img[src^ = ".../img/"] // ^ - indicates begins with, * - indicates as long as it contains, $ - indicates ends with
 Properties : value;
-CSS general rule
+
+***** CSS general rule *****
+
 selector { // block
   properties : value; // properties is a place holder for the name of the style you want
   }
+
+***** Background *****
+
 body {
   background : red;
   }
@@ -60,6 +72,9 @@ background-size : cover:
 rgba(red, green, blue, opacity(0-1)) // (0-1) is an alpha value, 0 = transparent 1 = opaque
 background : linear-gradient(to right, red, green, blue) // indicate directions and what colors you want
 background: radial-gradient(red,blue) /circular gradient
+
+***** Text *****
+
 font-size : 2cm;
 px, pt, pc // pixels, points, picas, 1px = 1/96 inches, 1pt = 1/72 inches, 1pc = 12pt = 1/6 inches
 vw - view width
@@ -71,6 +86,9 @@ text-align: center, justify // end text at end of line - justify
 font-weight: 100; // bolding text
 font-style: italic, oblique
 font-family : sans-serif;
+
+***** Border *****
+
 Padding - space between the content and the border
 Border- divider between padding and margin
 Margin - Space between border and all other content
@@ -80,6 +98,9 @@ border: size style color
              dashed
 padding-(top, right, bottom, left): 20px
 margin: 40px
+
+***** Containers *****
+
 float: right; // places an element on the left or right side of its container, allowing text and inline elements to wrap around it
 display: none; // completely hide/removes something
 display: inline, inline-block;
@@ -116,7 +137,10 @@ transform: scale(2.5); // increase or decrease size
 transform: rotate(-90deg)
 transform: (skewX, skewY)(45deg) // rotate on imaginary x or y axis
 transform: matrix(1, .45, .45, 1, 100, 50) // parameters - (a, b, c, d, tx, ty)
-animations syntax
+
+***** Animations *****
+
+Animations Syntax
 @keyframes translate-element{
 0% example {background}
 50% {transform: translate(10px, 10px);}
