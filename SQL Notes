@@ -1,3 +1,5 @@
+***** General Info *****
+
 Rational database management system
 Any collection of related information
 Store information
@@ -26,12 +28,14 @@ Data Control Language (DCL) - User and permissions management
 Data Manipulation Language (DML) - USed for inserting, updating, and deleting data from database
 Queries - A set of instructions given to the RDBMS written in SQL that tells the RDBMS what information you want it to retrieve for you
 
-Syntax
+***** Syntax *****
+
 SELECT employee.name, employee.age
 FROM employee
 Where employee.salary > 50000
 
-Data Types
+***** Data Types *****
+
 INT
 DECIMAL // M = total numbers before decimal point, N = number of digits after decimal
 VARCHAR(5) // String of text of length 5
@@ -39,7 +43,8 @@ BLOB - Binary Large bject, stores large data
 DATE // YYYY-MM-DD
 TIME STAMP // YYYY-MM-DD:MM:SS
 
-Syntax
+***** Syntax *****
+
 CREATE TABLE student();
 student_id INT PRIMARY KEY,
 name VARCHAR(20),
@@ -56,24 +61,28 @@ AUTO_INCREMENT // constraint
 UPDATE student
 SET major = 'CS'
 WHERE major = 'Computer Science';
-
-Operators - = , <> (not equals), >, <, >=, <=, AND, OR
 major = 'CS' OR major = 'CompSci'
 DELETE FROM student;
 
-Syntax Explanation
+***** Operators *****
+
+= , <> (not equals), >, <, >=, <=, AND, OR
+
+***** Syntax Explanation *****
+
 SELECT(Grab data from) * (Grab everything, can specify columns)
 FROM student (location of data we want to select); student.name, student.major
 ORDER BY name DESC; order alphabetically // DESC - is reverse alphabetically, ascending is the default - ASC
 LIMIT 3 // limits amount of data that is returned
--- // comments
+-- // how to write comments
 FOREIGN Key(mgr_id) REFERENECES employee(emp_id)
 ON DELETE SET NULL
 INSERT INTO 
 first_name AS forename // changes column name to forename
 SELECT DISTINCT branch_id
 
-Functions
+***** Functions *****
+
 SELECT COUNT(emp_id) // returns how many elements are in the given argument
 FROM employee
 AVG(salary) - returns the average of a given set of data
@@ -91,7 +100,8 @@ FROM (choose table name)
 L/R JOIN (choose another table)
 ON (condition needs to be met in order to join)
 
-Nested Queries
+***** Nested Queries *****
+
 SELECT employee.first_name, employee.last_name
 FROM employee
 WHERE employee.emp_id IN (
@@ -102,6 +112,8 @@ WHERE employee.emp_id IN (
 ON DELETE SET NULL // used when creating a table, if something is deleted, it's value and all those associated with it are set to NULL, except for the primary key
 ON DELETE CASCADE - when a primary key is deleted, the rows with the deleted values are deleted as well
 PRIMARY KEY can't be NULL
+
+***** Triggers *****
 
 TRIGGERS - what happesn when other stuff happens
 delimiter - sequence of characters for specifying boundaries
@@ -124,7 +136,9 @@ END IF;
 AFTER DELETE (BEFORE)
 DROP TRIGGER my_trigger;
 
-ER Diagrams - Entity Relationship
+***** ER Diagrams *****
+
+Entity Relationship
 Entity - An object we want to model and store information about
 Primary Key - Attributes that uniquely identifies an entry in the database table
 Composite attribute - An attribute that can be broken up into sub-attributes
