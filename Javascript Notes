@@ -1,3 +1,5 @@
+***** Basic Fundamentals *****
+
 //, /* */ - Commenting, same as Java
 var myName = "Eric"; // used by the whole class
 let myName = "Bob"; // only used in the scope where it's delcared
@@ -6,7 +8,9 @@ console.log(myName) // opens up the console
 Operators +, -, *, /, %, ++, --, +=, -=, *=, /=
 Declaring variables - var (name of variable you want) = (type anything, but what you type will indicate the type of variable it is, variable is not explicitly defined beforehand)
 Strings can use single quotes
-Escape characters
+
+***** Escape characters *****
+
 \' - single quote
 /" - double quote
 \\ - back slash
@@ -16,7 +20,9 @@ Escape characters
 \b - backspace
 \f - form feed
 str.length // gets length of the string
-Arrays
+
+***** Arrays *****
+
 Index starts at 0
 var myArray = [10, 20, 30];
 myArray[1] = 20;
@@ -27,7 +33,8 @@ myArray.pop(); // pops off last element in the array
 myArray.shift(); // removes first element of array
 myArray.unshift(type in what you want to add); // adds to the start of the array
 
-Functions
+***** Functions *****
+
 function myMethod() {
   ...code...
 } // call functions same as Java - myMethod(parameters if needed);
@@ -40,19 +47,22 @@ shift(); // removes and returns first item
 JSO.stringify(myArray); // turns stuff into a string
 nextInLine(); // next element
 
-Strict Equality Operator
+***** Strict Equality Operator *****
+
 === // does not convert type, both type and value have to be true for it to be true
 == // only the value has to be equal
 !== // string inequality operator
 
-Conditionals
+***** Conditionals *****
+
 && // and
 || // or
 if (condition) {
 } else if{
 } // same as Java
 
-Switch Statements // similar to Java
+***** Switch Statements *****
+similar to Java
 switch(variableYouWantToSwitch) {
   case 1: // if variableYouWantToSwitch === 1
   answer = "It is 1"
@@ -61,6 +71,8 @@ switch(variableYouWantToSwitch) {
   answer = "unknown"
   break;
  }
+
+***** Objects ***** 
 
 Javascript Objects - instead of indexes to access data, you use properties
 var myDog = { 
@@ -74,7 +86,8 @@ var myDog = {
  myDog['bark'] = "woof!" // adds property
  delete myDog.bark;
  
- Dictionary
+ ***** Dictionary *****
+ 
  var lookup {
   "alpha" : "Adams" };
   result = lookup[value] (alpha);
@@ -82,20 +95,23 @@ var myDog = {
 {} - curly brackets for objects
 .push // add stuff to the array
 
+***** Basic Functions *****
+
 Math.random() // generate a number between 0 to 1, not inclusive
 .floor // rounds decimal numbers down to the nearest whole number
 .ceil // rounds decimal numbers up to the nearest whole number
 parseInt(str); // returns the string as an integer
 ParseInt(str, 2 (base)) // returns the string as a binary number
 
-Ternary operator
+***** Ternary operator *****
+
 return a === b ? true : false;
 return number > 0 ? "positive" : num < 0 ? "negative" : "zero"; nested ternary operator
 let keyword - cannot declare same variable twice // limited t block scope
 var - global scope
 const - read only, cannot be reassigned later, use all uppercase letters for the name of the variable
 
-Arrow Functions
+****** Arrow Functions *****
 => // return
 var myConcat = (arr1, arr2) => arr1.concat(arr2);
 Number.isInteger(number) // boolean
@@ -104,7 +120,8 @@ Can assign parameter values if no arguments are passed in
 ... - rest operator, convert everything into one array
 [...array1] // prevents mutations (deep copy)
 
-Destructuring syntax
+***** Destructuring syntax *****
+
 const {variableName : nameOfAssignedVariable} = objectName;
 gets value from object from a specfic variable and assigns it to a new variable
 const[a, b, , c] = [1, 2, 3, 4, 5, 6]; // a = 1, b = 2, c = 4
@@ -112,7 +129,8 @@ const[a, b, , c] = [1, 2, 3, 4, 5, 6]; // a = 1, b = 2, c = 4
 Template literals
 ` (back tick) My name is ${person.name}` // put variables in strings, can add quotes and separate lines
 
-Syntax for Functions and Objects
+***** Functions and Objects *****
+
 function makeClass() {
   class Veggie {
       constructor(name) {
@@ -126,6 +144,7 @@ get name() {
   return this._food;
 } // _(underscore) indicates a private variable
 
-Import and Export
+***** Import and Export *****
+
 import {capitalizeString} from "./(file_name)"
 Must export something first, then you can import to another file
