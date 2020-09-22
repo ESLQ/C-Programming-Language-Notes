@@ -1,7 +1,10 @@
 Default HTML
 <!DOCTYPE html>
 <html> (highest level tag) </html> (closing tag)
-tags inside other tags are indexted
+tags inside other tags are indented
+
+***** Tags *****
+
 <body> content goes here </body>
 <title> Title of your Webpage </title>
 <meta> tag used to define information about the file
@@ -28,7 +31,7 @@ tags inside other tags are indexted
 <ul> unordered lists // bullet points
 <ol> ordered lists // numbered, can add attributes, type = "A" - alphabetical, "I" = Roman numeral
 <li> text list
-<dl> descriptioin list
+<dl> description list
 <dt> items
 <dd> description of the item
 <table> table tag
@@ -38,7 +41,8 @@ tags inside other tags are indexted
 <thead> table head
 <tbody> table body
 
-Containers
+***** Containers *****
+
 inline element <span>
 block element <p> <div>
 <input type = "text"/>
