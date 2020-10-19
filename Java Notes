@@ -1,1 +1,820 @@
+Instance Member
+  Instance variables in Java are used by Objects to store their states. Variables which are defined without the STATIC keyword and are Outside any method declaration are Object-   specific and are known as instance variables. They are called so because their values are instance specific and are not shared among instances
+Static Member
+  Static members are those which belong to the class and you can access these members without instantiating the class. Static members always remain the same, regardless of where   and how they are used.
+Interfaces
+  Declare using “interface” keyword” then the name you want to give it
+  To implement, use “implement” keyword and the name of the interface
+  A class that implements an interface must implement all the methods declared in the interface.
+  Can achieve multiple *inheritance (not the same as extends)
+  Abstract classes may contain non-final variables, whereas variables in interface are final, public and static.
+  Interface MagicTheGathering {
+	Public void playCard();
+	Public void drawCard();
+  }
+  Public class cardGame implements MagicTheGathering {
+  }
+  Interfaces cannot be instantiated
+  A class can implement more than one interface
+  All the methods are public and abstract. And all the fields are public, static, and final.
+Autoboxing
+  Converting a primitive value into an object of the corresponding wrapper class
+  Converting int to Integer class when expecting an object
+Unboxing
+  Converting an object of a wrapper type to its corresponding primitive value
+  Converting Integer to int when expecting a primitive value
+ArrayList
+  Import java.util.ArrayList;
+  ArrayList<String> learn = new ArrayList<>();
+Data abstraction
+  Process of hiding certain details and showing only essential information to the user. Abstraction can be achieved with either abstract classes or interfaces.
+Procedural abstraction
+  Procedural abstraction is when we write code sections (static methods) which are generalized by having variable parameters.
+  The idea is that we have code which can cope with a variety of different situations, depending on how its parameters are set when it is called.
+Encapsulation
+  Wrapping up data under a single unit. It is the mechanism that binds together code and the data it manipulates.Other way to think about encapsulation is, it is a protective     shield that prevents the data from being accessed by the code outside this shield.
+  Using private to hide data only within a class
+Iterator interface methods
+  Boolean hasNext()
+    Return marker < currentSize;
+  next()
+    Return list(marker++);
+  remove()
+    Marker--;
+    For (int i = marker++; i < currentSize; i++) {
+      List[i-1] = list[i];
+    }
+  currentSize--;
+  set()
+  add()
+  Iterator i = anything.iterator(); (anything is a list or something you want to iterate through)
+		while (i.hasNext()) {
+			print(i.next());}
+Iterable interface method
+  Only one method named iterator()
+  Method must return a Java iterator which can be used to iterate the elements of the object implementing the iterable interface.
+  Iterable<T>
+What interface must a collection class implement in order for it to work with for-each loops
+  Iterable interface which also implements iterator which has all the methods
+Enumerated
+  Data type in Java is used to describe a specific set of values for a variable.
+  They are static or final and type-safe. They can not change or be modified. Enum types are reference types, meaning they act like a class and can have their own constructors     and methods.
+  Public enum DayOfWeek {
+	SUNDAY, MONDAY, etc;}
+Privacy Leaks
+  When a class is implemented with private attributes, it can be to: Enforce a consistent state inside an object of that class. Make objects of that class immutable. A privacy     leak will break these possible intended features of making attributes private.
 
+Inheritance
+  Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object
+  The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and   fields of the parent class
+  Superclass - The class whose features are inherited is known as super class(or a base class or a parent class).
+  Sub Class - The class that inherits the other class is known as sub class(or a derived class, extended class, or child class). The subclass can add its own fields and methods   in addition to the superclass fields and methods.
+  Keyword “extends” to inherit
+  Public class magicTheGathering extends cardGames {
+  A class can only inherit a maximum of one class
+  Inheriting Constructors - A subclass inherits all the members (fields, methods, and nested classes) from its superclass. Constructors are not members, so they are not           inherited by subclasses, but the constructor of the superclass can be invoked from the subclass.
+  To invoke a super constructor - super() (syntax)
+Polymorphism
+  We can perform polymorphism in java by method overloading and method overriding. If you overload a static method in Java, it is an example of compile time polymorphism.
+  Concept by which we can perform a single action in different ways
+Method Overloading
+  Have more than one method of the same name but with different parameters
+Method Overriding
+  Have two methods with the same name and parameters (give its own implementation)
+“This” keyword
+  Reference variable that refers to the current object
+Constructors
+  Constructor(s) of a class must have the same name as the class name in which it resides.
+  No-argument constructor: A constructor that has no parameter is known as default constructor. If we don’t define a constructor in a class, then the compiler creates a default   constructor(with no arguments) for the class. And if we write a constructor with arguments or no-arguments then the compiler does not create a default constructor. Default       constructor provides the default values to the object like 0, null, etc. depending on the type.
+  Public MagicTheGathering(Int manaCost) {
+	this.manaCost = manaCost; (manaCost is an instance variable) }
+Difference between “==” and equals
+  “==” compares two object references and determines whether they refer to the same instance (have the same memory address)
+  Equals compares the values of the object
+Immutable 
+  Cannot be changed or modified
+Four visibility specifiers
+  Public
+    Visible to all classes
+  Protected
+    Visible to classes within the package and the subclasses of other packages.
+  No access modifier (default/package)
+    Visible to the classes within the package
+  Private
+    Visible within the class. It is not accessible outside the class.
+Early(static) Binding
+  Performance and ease of development
+  Happens at the compile-time
+Late(dynamic) binding
+  Happens at runtime
+  Does not require the compiler to reference the libraries that contain the object at compile time.
+Compile time
+  The time it take for your code to start running
+Runtime
+  The time it takes for your code to run
+Java uses both binding
+  private, final and static members (methods and variables) use static binding while for virtual methods (In Java methods are virtual by default) binding is done during run time   based upon run time object (late binding)
+Dynamic dispatch 
+  Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, rather than compile time.
+  When an overridden method is called through a superclass reference, Java determines which version(superclass/subclasses) of that method is to be executed based upon the type     of the object being referred to at the time the call occurs. Thus, this determination is made at run time.
+  At run-time, it depends on the type of the object being referred to (not the type of the reference variable) that determines which version of an overridden method will be       executed
+  A superclass reference variable can refer to a subclass object. This is also known as upcasting. Java uses this fact to resolve calls to overridden methods at run time.
+Keyword “final”
+  Can not be changed or mutated once instantiated for final, works for variables, methods, and classes
+Comparable interface
+  In java.lang package
+  Method- .compareTo(Object) and will return a positive integer if current object is greater, 0 if equal, or a negative integer if current object is lesser
+Comparator interface
+  In java.util package
+  2 methods- public int compare(Object 1, Object 2) and public boolean equals(Object)
+    Also returns a positive, 0, or negative number
+
+Abstract Classes
+  A Java abstract class is a class which cannot be instantiated, meaning you cannot create new instances of an abstract class. The purpose of an abstract class is to function as   a base for subclasses.
+  Declaration - public abstract class MyAbstractClass. Add “abstract” for methods too
+  If a class has an abstract method, the whole class must be declared abstract. Not all methods in an abstract class have to be abstract methods. An abstract class can have a     mixture of abstract and non-abstract methods.
+  Create classes that cannot be instantiated, but only be inherited
+  False - If a class is declared as abstract then the class must contain at least one abstract method.
+  abstract class Base {    
+    void fun() { System.out.println("Base fun() called"); } 
+  }   
+  class Derived extends Base { } 
+   
+  class Main { 
+    public static void main(String args[]) {  
+        Derived d = new Derived(); 
+        d.fun(); 
+    } 
+  } 
+
+Interfaces over Abstract classes
+  Interfaces allow for multiple inheritance while abstract classes do not
+Abstract over interfaces
+  Allow functionality that subclasses can implement or override
+JUnit Tests
+  JUnit Test 4
+  Declaration @Test public void checkingEvenValues()
+  assertTrue, assertFalse, assertEquals, assertNotEquals
+Throwing an exception
+  When something could go wrong when the user uses your code, must be handled or won’t compile
+  Public class eatCardboard throws IOException {} - this is declare
+  Catch is a try and catch block and the exception should be handled in the catch block
+  Try { this code } catch (NullPointerException e) { }
+  Call stack is used to pop methods off the stack to look for a try and catch block that can handle the exception
+  “Finally” keyword will always run if the try block is entered, no matter what happens
+  Checked exceptions are checked at compile time and doesn’t involve your code but rather the machine and include SQLException, IOException, FileNotFoundException
+  Unchecked exceptions are thrown when there’s something wrong with your code and include RuntimeException, IllegalStateException, NullPointerException, ArithmeticException,       IllegalArgumentException, OutOfMemoryError, StackOverflowError. Under error and RunTimeException
+Nested static classes
+  public class A {
+  private static x = 5;
+  private static class B { } }
+  Essentially like having two ordinary classes and rarely used
+  Privacy is not respected between the two
+Nested Inner classes
+  public class A {
+  public class B { } }
+  Privacy is not respected
+  The inner class object has access to all members of outer class object
+  Outer class object does not have access to “servicers” (inner class)
+Mutability
+  Mutable means it can be changed or altered
+  Immutable means it cannot be changed
+  Must use deep copy when data is mutable to avoid privacy leaks (copy each piece of data usually using a for loop for lists)
+  public Ex(int[] values) { 
+        data = new int[values.length]; 
+        for (int i = 0; i < data.length; i++) { 
+            data[i] = values[i]; 
+        } 
+  } 
+
+  Can use shallow copy when data is immutable (data has the same memory address as values)
+  public Ex(int[] values) { 
+		Data = values;
+  }
+Copy objects
+  Deep and shallow copies
+  Clone() method
+  Inherited from Object class (makes a shallow copy)
+  “Marker” interface
+  If omitted, JVM will throw CloneNotSupportedException when clone is called
+  Only possible if superclass is Object or implements Cloneable
+  Include “implements Cloneable”
+  Carefully override the clone method 
+  Every class that implements clone() should call super.clone() to obtain the cloned object reference.
+  The class must also implement java.lang.Cloneable interface whose object clone we want to create otherwise it will throw CloneNotSupportedException when clone method is called   on that class’s object.
+  protected Object clone() throws CloneNotSupportedException {}
+  public Triangle clone() {
+    try {
+		return (Triangle)super.clone();           
+	} catch (CloneNotSupportedException e) {
+		return null; }
+  Public class A implements Cloneable {
+  java.lang.Cloneable;
+  public Object clone() throws CloneNotSupportedException { declaring the exception
+  Cloneable interface has the method clone()
+  To make a field-for-field copy of instances of that class.
+Instance initialization block
+  Syntax - public class A{ { instance initializer block is here } }
+  Runs before the constructor
+  Runs every time an object is instantiated
+  Can help streamline constructors
+Static initialization block
+  Syntax - public class A { static { static initializer block here } } 
+  Runs once (when class is first loaded)
+
+Anonymous classes
+  Used when a class will only be instantiated in one place in the code
+  Class is declared and instantiated at the same time!
+  Class has no name
+  Either extends another class or implements an interface
+  Syntax - Foo x  = new Foo() { }
+  public static void main(String[] args) {
+	  { 
+        //Here we are using Anonymous Inner class 
+	        //that extends a class i.e. Here a Thread class 
+	        Thread t = new Thread()  { 
+            public void run() 
+            { 
+                System.out.println("Child Thread"); 
+	            } 
+	        }; 
+	        t.start(); 
+	        System.out.println("Main Thread"); 
+	 }
+  Thread is an interface
+
+Gui
+  Graphical User Interface
+Event Driven Programming
+  Event-driven programming is a programming paradigm in which the flow of program execution is determined by events - for example a user action such as a mouse click, key press,   or a message from the operating system or another program.
+Container
+  Rectangular regions, common container classes include
+    JFrame - a window
+    JPanel - rectangular region with no border
+    JScrollPane - region with scroll bars
+    JDialog - quick and easy dialogue box
+Widget
+  Building blocks for a graphical user interface
+  Common examples include
+    JButton (A button you can press)
+    JLabel (Basically a caption for something)
+    JCheckBox (Can select multiple options)
+    JRadioButton (Can only select one option)
+    JTextArea (Write text in a specific area)
+    JMenu (Displays a menu)
+    JTree (Displays and tree of information)
+Layout Managers 
+  Facilitates automatic dynamic positioning of components, much easier than doing it manually
+  Common examples include
+    BorderLayout (places components in up to five areas: top, bottom, left, right, and center)
+    BoxLayout
+    CardLayout
+    FlowLayout (lays out components in a single row, starting a new row if its container is not sufficiently wide)
+    GridLayout (makes a bunch of components equal in size and displays them in the requested number of rows and columns)
+    GroupLayout
+    SpringLayout
+
+Event Listener
+  Respond to events (trigger)
+  Common examples include
+    ActionListener (General, a button click)
+    FocusListener (component gains or loses focus)
+    CaretListener (caret has changed position in text)
+    KeyListener (key has been pressed or released)
+    MouseListener (any mouse interaction)
+    WindowListener (window opened or closed)
+Process and Threads
+  Java program is a process that spawns several threads
+  Main thread – begins executing statements in main method
+  Event Driven Thread (EDT)
+    Draws GUI components
+    Handles user’s actions
+    Java methods will be executed by one or more threads
+    Each thread has its own call stack
+    Threads share the heap
+    Executes statements sequentially until main method is popped off the stack
+Big O notation (Time complexity)
+  Best to Worst
+    O(1)
+    O(logn) - Binary Search
+    O(n)
+    O(nlogn)
+    O(n^2)
+    O(n^3)
+    O(2^n)
+    O(3^n)
+    O(n!)
+    O(n^n)
+
+Symbols for Big O
+  Weird less than sign (<=) - function(f) is either better than function(g) or at least not dramatically worse
+  Little “o” - Function(f) is o(g) meaning f is in a faster category than g, strictly faster
+  Theta (Θ) - function(f) is the same as g, same category
+
+Scenarios for Big O
+  Best Case - Find the element you are looking for immediately, usually O(1)
+  Average Case - Usually very similar to worst case, halfway time
+  Worst Case - Element is the last index, when n goes to infinity
+List Data Type
+  Java.util.List is a child interface of Collection
+  List a = new ArrayList();
+  List b = new LinkedList();
+  List<Obj> list = new ArrayList<Obj>();
+Data Structure Lists
+  ArrayList - Data structure
+    Allow duplicate of elements and insertion order of elements
+    Resizable
+    Adding is O(1) unless you have to resize, then it’s O(logn)
+    Removing at worst is O(n) (usually this if last element), if first, then it’s O(1)
+    Iterate over is O(1)
+    Get elements is O(1) (get(int index))
+  LinkedList - Abstract Data Type
+    Allow duplicate of elements and insertion order of elements
+    Add is O(1)
+    Removing is O(1)
+    Iteration is O(1)
+    Get is O(1) at best, O(n) at worst, usually O(n)
+LinkedList Implementation
+  public class BasicLinkedList<T> implements Iterable<T> {
+	  private Node<T> head;
+	  private Node<T> tail;
+	  private int currentSize;
+	  private static class Node<T> {
+		  private T elementData;
+		  private Node<T> nextNode;
+    }
+		  public Node(T data) {
+			  this.elementData = data;
+			  nextNode = null;
+	    }
+  }
+
+	public BasicLinkedList() {
+		head = null;
+		tail = null;
+		currentSize = 0;
+	}
+If a Stack is implemented with an array, which end (head or tail) should represent the top? 
+  Tail - Last in First Out
+  Elements in an Array are added to the end by making a copy and increasing size
+If a Stack is implemented with a linked list, which end (head or tail) should represent the top?
+  Tail - Last in First Out
+  Elements in a LinkedList are added to the end using the add method
+Stack is an abstract data type
+  If a Queue is implemented with a linked list, which end should be used to add new elements? 
+Head - First in First Out
+  Since elements are added to the end of a linked list, elements need to be added to the front (head) to follow Queue data structure
+  Queue is an abstract data type
+HashTable - Data structure
+  Maps keys to values
+  In Hashtable we specify an object that is used as a key, and the value we want to associate to that key. The key is then hashed, and the resulting hash code is used as the       index at which the value is stored within the table.
+  Hashtable(); This is the default constructor.
+  Hashtable(int size); This creates a hash table that has initial size specified by size.
+  Hashtable(int size, float fillRatio); This version creates a hash table that has initial size specified by size and fill ratio specified by fillRatio. Resizing the HashTable     when it reaches load factor
+  Methods
+    contains() - Boolean
+    get() - void retrieves something
+    put() - inserting something
+    remove() - deleting something
+    size() - int - size of table
+    containsKey() - Boolean
+    containsValue() - Boolean
+    isEmpty() - Boolean
+  Hash function - A way to assign a number to a piece of data so that it can be mapped in the hashtable
+  Hash code - The number as a result of using the hash function
+  Method to determine where an element belongs in a hash table
+    index = hashcode % tablesize
+  If you change the hashcode method, you must change the equals method as well, not necessarily the other way around
+  Load factor - the size of a hashtable will reach until it needs to be resized
+  If table needs resizing, multiply it by the load factor, usually around 1.7.
+Sets - Abstract data type
+  Set is an interface which extends Collection. It is an unordered collection of objects in which duplicate values cannot be stored.
+  Implemented as a HashSet, LinkedHashSet, or TreeSet
+  Methods
+    size()
+    isEmpty()
+    contains()
+    iterator()
+    add()
+    remove()
+    removeAll()
+    clear()
+Map - Abstract data type
+  The java.util.Map interface represents a mapping between a key and a value. The Map interface is not a subtype of the Collection interface. 
+  Implemented as a HashMap, LinkedHashMap, and TreeMap
+  Methods
+    put(key, value) - insert an entry into the map
+    remove(key)
+    get(key) - return value of the key specified
+    containsKey(key)
+Recursion
+  The process in which a function calls itself directly or indirectly is called recursion and the corresponding function is called a recursive function. 
+  Base case or stopping case - where the function stops calling itself
+Tree - abstract data type
+  Head of a tree is called the “root”
+  Leaves are nodes without children
+  Height of the tree is the number of generations or levels including the root
+  Binary Tree - a binary tree is a tree data structure in which each node has at most two children, which are referred to as the left child and the right child. Each child is     either a left or right child, if there are two, they are distinguishable. Location matters when it comes to uniqueness.
+  Breadth first traversal - One layer at a time from top to bottom. Traditionally implemented with a queue and a loop
+  Code (pseudo code)
+    Queue Q ();
+    Q.enqueue(root); // put something into the queue
+			while(!Q.empty()) {
+				n = Q.dequeue(); // take something out of the queue
+				If (n != null) {
+					visit n.data;
+      Q.enqueue(n.left);
+      Q.enqueue(n.right);
+
+  Depth first traversal - Go as far down as possible before backtracking, typically implemented recursively
+    Three kinds of Depth First Traversal
+      Pre-order Traversal - Visit localRool.data, then left branch, then right branch
+      Inorder Traversal - Visit left branch, then localRoot.data, then right branch
+      Post-order Traversal - Visit left branch, then right branch, then localRoot.data
+Balanced Binary Tree
+  A balanced binary tree is where the left branch and right branch height difference is 1 or 0.
+Binary Search Tree
+  The left subtree of a node contains only nodes with keys lesser than the node’s key.
+  The right subtree of a node contains only nodes with keys greater than the node’s key.
+  Methods
+    Unbalanced
+      add() - O(n) inserting
+      Searching - O(n) get method
+      remove() - O(n) deleting
+    Balanced
+      add() - O(logn) inserting
+      Searching - O(logn) get method
+      remove() - O(logn) deleting
+Singleton Design Pattern
+  The class must have exactly one instance at all times
+  Implementation
+    Public class Foo {
+      Private final static Foo SINGLETON = new Foo();
+      Public static Foo getInstance() {
+      Return SINGLETON:
+      }
+      Private Foo() { // private and no content
+      }
+    }
+Complete Binary Tree
+  Every level except for the last one is completely filled
+  Nodes on bottom level are as far to the left as possible (no gaps)
+  Can’t have gaps on the left half
+
+Heap - Data structure - specialized tree-based data structure, implementation of a ADT priority queue
+  A heap is a tree-based data structure in which all the nodes of the tree are in a specific order. Used on complete binary trees (well-balanced), linkedtree
+  Data is comparable
+  Min Heap
+    Each Node’s value is smaller than or equal to its children - smaller parents than children
+  Max Heap
+    Each node is larger than or equal to its children
+  Standard Operation Performed on a Heap
+    Add an element
+      Adds to the most open node closest to the left, if none are open, adds to the left most node (leaf)
+      While the node is smaller than the parent and is not the root, swap with the parent until satisfies min heap
+      Run-time
+        Heap is a complete binary tree
+        Complete trees are always well-balanced
+        Height of the tree is O(logn)
+        Performance is O(logn)
+      Remove and return the smallest element
+        Smallest at first node
+        Copy data from last node in tree into the first node, then remove
+        Swap the copied data with the smaller of the two children to maintain min heap structure
+        Height is O(logn)
+        Performance is O(logn)
+      isEmpty - boolean
+Graphs - Abstract data type
+  Successors - what the vertex is pointed to, leads to next
+  Predecessors - what is preceding/ before that vertex
+  Adjacencies - what a vertex is connected/pointing to
+  Undirected graph
+    Vertices - each vertex has data
+    Edges - connection between vertices
+    Neighbors (adjacencies) - what the vertex is connected to
+  Directed graph
+    Sometimes pair of vertices has edges in both directions
+    Vertex can have an edge to itself
+  Weighted graph
+    Either all of them have them or none
+    Both undirected and directed graphs can have them
+    A value is assigned to each edge
+  Path
+    A walk from one vertex to another
+    Can’t violate arrow direction
+    Ex. We say “B is reachable from I” - Sequence of paths leads to a vertex - IHFAB
+    Can have infinite paths
+  Cycle
+    A path that starts and ends on the same vertex
+    Acyclic graph - a graph with no cycles
+  API
+    Public Graph() // starts empty
+    Public void addVertex(V vertex)
+    Public void addEdge(V vertex1, V vertex2) // could be weighted
+    Public boolean containsEdge(V vertex1, V vertex2)
+    If weighted public int getWeight(V vertex1, V vertex2)
+    Implementation
+      Using Nodes (“Linked-graph”)
+      Using a Map
+      Using a Matrix (2-dimensional array)
+  Implementation
+    Public class Graph<V> { // Using Nodes
+    Private V vertex;
+    Private Set<Node> adjacencies;
+    }
+    Private Set<Node> nodes;  // there is no root or head
+      Private class Edge {
+        Private V from, to;
+        Private int weight;
+      }
+    Private Set<Edge> edges;
+    }
+    Public class graph<V> { // Using Maps
+    Private Map<V, Set<V>> graph;
+    Private Map <V, Map<V, Integer>> weightedGraph;
+    }
+    Public class Graph<V> {
+    Private List<V> vertices;
+    Private boolean[][] matrix;
+    }
+    If weighted
+    Private int[][] weightedMatrix; // instead of boolean
+    }
+Dijkstra's Algorithm
+  Positive weighted graphs, can be 0
+  Definition - On a weighted graph with non-negative weights, the lowest cost path from Vertex1 to Vertex2 is the path with the smallest sum of weights along the path
+  Add edges to get total cost of path
+Graphs - ADT
+  Vertex - Synonym for a node of a graph (Fawzi doesn’t want us to say node). Each vertex has data
+  Edge - Connection between vertices. An edge joins two vertices a, b and is represented by a set of vertices it connects.
+  Directed graph - Have edges with direction. Edges indicate one way relationship. Points one vertex to another vertex. Drawn with arrows pointing to a particular vertex.         Sometimes pairs of vertices have edges in both directions. Vertex can have an edge to itself.
+  Undirected graph - Vertices connected together without arrows, just a straight line.
+  Weighted graph - Each edge has a numerical weight. Either all of them have them or none. Directed graphs can have them. 
+  Path - A walk from one vertex to another. Can’t violate arrow direction, must follow the direction the arrows are pointing. Can have finite or infinite paths. We say “B is       reachable from I”.
+  Cycle - A path that starts and ends on the same vertex.
+  Acyclic graph - A graph with no cycles
+Graph API
+  Public Graph() // starts empty
+  Public void addVertex(V vertex)
+  Public void addEdge(V vertex1, V vertex2)
+  Public boolean containsEdge(V vertex1, V vertex2)
+  Public int getWeight(V vertex1, V vertex2) // used for weighted graphs
+Implementation of graphs
+  Using Nodes (linked-graph)
+    Public class Graph<V> {
+      Private class Node {
+        Private V vertex;
+        Private Set<Node> adjacencies;
+        }
+        Private Set<Node> nodes;
+        Private class Edge {
+          Private V from, to;
+          Private int weight; 
+          Private Set<Edge> edges;
+          }
+    }
+Using Maps
+  Public class Graph<V> {
+    Private Map<V, Set<V>> graph;
+    Private Map<V, Map<V, Integer>> weightedGraph;
+  }
+2-Dimensional Array Matrix
+  Public class Graph<V> {
+    Private List<V> vertices;
+    Public boolean [][] matrix; 
+    Private int [][] weightedMatrix; // if weighted
+Looping algorithm using a Queue, what kind of traversal?
+  Breadth first search traversal
+
+Dijkstra’s Algorithm
+  Positive weighted graphs, can be 0. 
+  Definition - On a weighted graph with non-negative weights, the lowest cost path from Vertex 1 to Vertex2 is the path with the smallest sum of weights along the path.
+Threads
+  Difference between processes and threads
+    Processes
+      Programs running independently of one another
+      Do not share memory/resources
+      CPU scheduling - Process ran concurrently, switches very fast amongst all the processes
+      Can be launched by you or other processes
+    Threads
+      Thread of execution (What is being executed)
+      Thread executes instructions
+      Each process consists of one or more threads
+      One main thread is launched, may launch others (spawn - CS terminology)
+      Shares memory
+      Work collaboratively
+      Share same heap space
+  Threads in Java
+    When you run a Java program, you create a process (JVM)
+    Main thread executes Java program
+    Non-deterministic - output is different every time it is ran
+  Memory diagram
+    It’s like a queue data structure, first in, first out
+  Applications that utilize multi-threaded programs
+    Gaming 
+    Text editor
+  Spawning threads 
+    Use runnable interface
+    Public class passCS implements Runnable {
+      Public void run()  // one method
+    }
+Data race
+  When threads are allowed to modify shared data
+  A thread can get interrupted at any moment
+  Increment and decrement operators (++ and --) are not atomic operations - don’t do just one thing. Atomic operators only do one thing independently
+Lock
+  Synchronization - make threads not interfere with each other
+  Avoid data races
+  Slows down code
+  Every object in Java has a “monitor lock”, a lock associated with it. A thread can acquire(hold) the lock on an object. Only one thread can hold the lock on the object at a     time.
+  If one thread hold the lock on an object and another thread tries to acquire the lock on the same object, the second thread “blocks” - sits there frozen
+  There could be multiple threads all blocked, trying to acquire the lock on the same object
+  When the thread holding the lock releases it, one of the blocked threads will acquire the lock and proceed
+  Threads acquire locks through synchronization
+  Syntax - synchronized(thisObject) { // synchronized block
+      X++; }
+  When a thread reaches this block, it attempts to acquire the lock on the object
+    Case 1 - No thread holds the lock on a specific object
+      This thread acquires the lock and starts executing the block
+      When end of block is reached, thread releases the lock
+    Case 2 - Another thread already holds the lock
+      This thread blocks
+    Public synchronized BasicLinkedList<T> add ToFront(T data) { 
+      Putting synchronized in the method prototype refers to current object
+  Thread-safe code is code that will work even if many Threads are executing it simultaneously. A piece of code is thread-safe if it only manipulates shared data structures in a   manner that guarantees safe execution by multiple threads at the same time.
+    Thread safe examples in Java libraries
+      Stack
+      Vector
+      Properties
+      HashTable
+    Not thread safe examples in Java libraries
+      ArrayList
+      LinkedList
+      HashSet
+      LinkedHashSet
+      HashMap
+      LinkedHashMap
+Deadlock
+  Threads are blocked indefinitely
+  Deadlock in Java is a condition where two or more threads are blocked forever, waiting for each other. This usually happens when multiple threads need the same locks but         obtain them in different orders. It causes the executing thread to block while waiting for the lock, or monitor, associated with the specified object.
+  To avoid deadlocks
+    Never allow a thread to hold locks on two different objects simultaneously
+    Probably just use a universal (global variable) lock to enforce only one swap at a time
+Synchronize Queue methods (deque, enque)
+  Consumer/Producer Model
+  Common design where threads share a collection
+  Collection shared by many threads
+  Some threads are adding things (Producers)
+  Some threads are removing things (Consumers)
+    Public class Producer implements Runnable {
+      Private Queue<Integer> queue;
+      Public Producer (Queue<Integer> queue) {
+        This.queue = queue;
+      Public void run() { }
+Methods
+  wait() and notifyAll() can be called on any object
+  For a thread to call these methods on an object, the thread must hold a lock on the object (Otherwise an exception is thrown)
+  obj.wait() - I will let go of the lock on this object and sleep here until I am woken up by another thread. wait() causes current thread to wait until another thread invokes     the notify() method or the notifyAll() method for this object. 
+  obj.notifyAll() - All threads who are waiting on this object should wake up, still holding the lock. When lock is released, one of the threads that was woken up can get the     lock and start moving. The others will eventually get their turn. notifyAll() wakes up all threads that are waiting on this object's monitor. A thread waits on an object's       monitor by calling one of the wait methods. The awakened threads will not be able to proceed until the current thread relinquishes the lock on this object.
+  Always use a loop when using obj.wait() method
+I/O Streams - Flow of data to/from your program
+  File System, Network, Other programs, hardware devices
+  Buffering - A “buffer” is a block of memory allocated for storing chunks of data temporarily
+  Buffered output
+    Suppose a program slowly generates data to send somewhere. Without buffering, each element is sent one by one. Wth buffering, output data elements accumulate locally in a       “buffer”. When the buffer is full, entire contents are sent. Important to flush the buffer when done.
+  Buffered input
+  Suppose a program slowly processes data from some source. Without buffering, each element is retrieved individually and processed. With buffering, large chunks of data is        retrieved and stored locally in the buffer. Elements in a buffer are processed individually.
+Java streams
+  Raw Streams
+    Byte Streams - raw data (0’s and 1’s)
+    Character streams - text
+  Higher level streams
+    Data streams - Java primitives and strings
+    Object streams - Java objects
+  Byte Streams
+    Most basic stream
+    Could be used for anything
+    Foundation for every other stream
+    Java classes
+      Basic: InputStream, OutputStream
+      Extensions with buffering: BufferedInputStream, BufferedOutputStream
+      Character Encodings
+        Java uses UTF-16(“Unicode”)
+        Essentially universal - includes nearly every printable character
+        Otherwise, it is difficult to differentiate languages for each country
+  Character Streams
+    Translate back and forth between local character encoding and UTF-16
+  Data Streams
+    High level streams
+    For Java primitives and Strings
+    Java classes - DataInputStreams, DataOutputStreams
+  Object Streams
+    High level
+    Can read/write entire objects
+    Objects must implement Serializable
+Networking in Java
+  Networks - Group of computers communicating
+  Internet is a networks 
+  IP Addresses - Internet Protocol
+    Old way - IPv4
+    New Way - IPv6 uses hexadecimals
+  Ports - Each network application has its own Port Number (0 to 65535 range)
+    Some port numbers are reserved
+      21 gtp (transferring files)
+      23 telnet (remote terminal)
+      80 http (web servers)
+      We say “the webserver is running on port 80”
+  Packets
+    Has a destination: address and port
+    Senders: address and port
+    Data (payload)
+  Internet Protocols (2 varieties)
+    UDP (User Datagram Protocol)
+      Packet oriented, simple and fast, sometimes unreliable
+      May arrive in the wrong order, packets can get lost, changed/corrupted (garbled)
+    TCP (Transmission Control Protocol)
+      Connection oriented
+      Complex
+      Lots of overhead
+      Reliable
+    TCP is better than UDP, but less efficient
+    UDP - Used for videos, some pixels missing, but is usually unnoticeable
+  Client/Server Model
+    Servers provide a service to a client when requested
+    Clients - Web Servers, email servers, chat servers, video conferencing servers, game servers, submit server
+  Web servers
+    Client is typically a “web browser”
+    Web server stores files to be served to browser upon request
+    Web server and browser communicate with plain text
+    Protocol is called http (Hypertext Transfer Protocol) know this
+  URL - Uniform resource locator
+    Options for Protocol
+      Http, https, ftp, File
+    Other possibilities
+      Using IP address instead of domain name
+      Specifying port number
+      Query string
+      Fragment Identifier
+    Example - http://www.cs.umd.edu/~fpe/example.html (http is the protocol, www.cs.umd.edu is the domain name, and ~fpe/example.html is the file name that include the path)
+Java Networking classes
+  IP address
+    InetAddress
+  UDP
+    Datagram Packet
+    Datagram Socket - UDP sockets (server and client)
+  TCP
+    Socket - TCP generally use sockets
+    Server socket - TCP (server only, waits for client connections)
+  Connecting to resources (web pages, other files)
+  Web page scraper
+    URL url = new URL(“enter URL here”); // URL is a type
+Algorithms
+  Classifying problems and finding optimal solutions
+    Satisfactions problem
+      Algorithm must provide any solution. Just find a solution
+    Optimization Problem
+      Find the optimal solution (best solution)
+      An optimal algorithm is one that solves the problem in the best possible runtime (big-O)
+  8 different approaches
+    Divide and Conquer
+      Recursion based on dividing a problem into subproblems that do not overlap
+      Divide problem into smaller non-overlapping subproblems
+      Solve each subproblem recursively
+      Combine solutions to solve original problem
+      Usually contains two or more recursive calls
+      Ex. Merge sort
+    Dynamic Programming
+      We keep a table with results for each subproblem that has already been solved
+      Don’t reinvent the wheel
+      Ex. Fibonacci and Dijkstra’s
+      Use Hashmap to store subproblem
+    Greedy Algorithm
+      Based on choosing best immediate (local) choice at each step
+      Hope local “best” choice lead to optimal solution
+    Brute Force Algorithm
+      Find all possible solutions, choose the best one
+      Generally most expensive approach
+    Branch and Bound Algorithm
+      For optimization problems
+      As solutions are found, remember best solution so far
+      Eliminate partial solutions that cannot improve upon best current solution (prune - CS term - get rid of)
+    Backtracking
+      Works well for problems where:
+        There is a “current state” and a “finished state: and numberouse in between states
+        Each choice/action leads from one state to another
+        Turn your problem into a graph
+        Each vertex represents a possible “state” of the problem
+        Edges represent decisions/actions leading from one state to another
+        There is a “starting state”
+        There is a “finished state”
+        Run depth-first (recursive ) search
+    Backtracking with Heuristics
+      Do backtracking, but when deciding which neighbor to explore
+      Apply heuristic (“rule of thumb”) to decide which neighbor to try first, this is not pruning, just ordering the neighbors intelligently
+      Can greatly improve performance
+      Traveling Salesman Problem - Complexity is O(2^n)
+    Approximation Algorithm
+      Used when problem is just too hard to solve fast enough
+      Instead of seeking optimal solution, quickly find one that is “close enough”
+      Not guaranteed to find best solution
+      Heuristics and approximation are used frequently in real applications
